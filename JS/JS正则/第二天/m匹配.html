@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hd = `
+        #1 js,200元 #
+        #2 php,300元 #
+        #3 baidu.com # 小
+        #4 node.js,180元 #
+        `;
+        // \s 匹配空格 \s* 匹配0个或多个空格
+        // \d 匹配数字 \d+ 匹配数字一个或多个
+        // m 代表每一行单独处理
+        // $ 代表结束 ^ 代表开始
+        // {name:'',value:''}
+        console.log(hd.match(/^\s*#\d+\s+.+\s+#$/gm));
+      let lessons =  hd.match(/^\s*#\d+\s+.+\s+#$/gm).map(v => {
+           v =  v.replace(/\s*#\d+\s*/,'').replace(/\s+#/,'');
+            console.log( v.split(','));
+            [name,price] = v.split(',')
+            return {name,price};
+        //    return {name,price};
+        })
+
+        console.log(lessons);
+        console.log(JSON.stringify(lessons,null,2));
+    </script>
+</body>
+</html>

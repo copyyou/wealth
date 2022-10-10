@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hd = 'youjinxiaNg';
+        //匹配第一个字母，区分大小写
+        console.log(hd.match(/n/));
+        //匹配第一个字母，不区分大小写
+        console.log(hd.match(/n/i));
+        //匹配所有符合的字母,区分大小写
+        console.log(hd.match(/n/g));
+        //匹配所有符合的字母，不区分大小写
+        console.log(hd.match(/n/gi));
+
+        console.log(hd.replace(/u/gi,'@'));
+    </script>
+</body>
+</html>
